@@ -6,7 +6,7 @@
     "test": "jest",
     "start": "node src/server/server.js",
     "build-prod": "webpack --config webpack.prod.js",
-    "build-dev": "webpack-dev-server  --config webpack.dev.js --open"
+    "build-dev": "webpack serve  --config webpack.dev.js --open"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "webpack": "^5.68.0",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "workbox-webpack-plugin": "^6.4.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.0",
@@ -29,6 +30,7 @@
     "mini-css-extract-plugin": "^2.5.3",
     "node-sass": "^7.0.1",
     "sass-loader": "^12.4.0",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack-dev-server": "^4.7.4"
   }
 }
