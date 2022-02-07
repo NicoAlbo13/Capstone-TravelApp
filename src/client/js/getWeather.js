@@ -7,13 +7,14 @@ async function getWeather(info){
     const res = await fetch(`${api}?lat=${info.lat}&lon=${info.lon}&city=${info.city}&country=${info.country}&days=${days}&key=${apiKey}`);
     try{
         const data = await res.json();
+        const weather = data.data;
         //Select the needed data
         const apiResponse = {
-            temp: data.data[days-1].temp,
-            minTemp: data.data[days-1].min_temp,
-            maxTemp: data.data[days-1].max_temp,
-            icon: data.data[days-1].weather.icon,
-            description: data.data[days-1].weather.description
+            temp: weather[weather.length-1].temp,
+            minTemp: weather[weather.length-1].min_temp,
+            maxTemp: weather[weather.length-1].max_temp,
+            icon: weather[weather.length-1].weather.icon,
+            description: weather[weather.length-1].weather.description
         };
         console.log(apiResponse)
         return apiResponse;
