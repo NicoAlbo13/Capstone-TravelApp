@@ -5,6 +5,7 @@ async function handleSubmit(e){
     //Get geo location of the destination provided by de user
     let place = document.getElementById('destination').value;
     let geoInfo = await Client.getGeo(place);
+    let weather = await Client.getWeather(geoInfo);
 }
 
 export { handleSubmit }
