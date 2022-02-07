@@ -3,7 +3,7 @@ async function getGeo(place, date){
     const travelDate = new Date(date);
     const actualDate = new Date();
     const difference = travelDate.getTime() - actualDate.getTime();
-    const days = Math.ceil(difference/(1000*3600*24)) + 1;
+    const days = Math.ceil(difference/(1000*3600*24));
     //console.log(days)
     /* API data*/
     const api = 'http://api.geonames.org/searchJSON?q=';

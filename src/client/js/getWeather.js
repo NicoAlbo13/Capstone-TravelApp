@@ -14,6 +14,7 @@ async function getWeather(info){
             minTemp: weather[weather.length-1].min_temp,
             maxTemp: weather[weather.length-1].max_temp,
             icon: weather[weather.length-1].weather.icon,
+            days: days,
             description: weather[weather.length-1].weather.description
         };
         postData('http://localhost:8081/add', apiResponse);

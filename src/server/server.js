@@ -27,6 +27,7 @@ function message(req, res){
         minTemp: req.body.minTemp,
         maxTemp: req.body.maxTemp,
         icon: req.body.icon,
+        days: req.body.days,
         description: req.body.description
     }
     Object.assign(projectData, postData);
