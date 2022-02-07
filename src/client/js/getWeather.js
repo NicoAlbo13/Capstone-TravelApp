@@ -16,12 +16,34 @@ async function getWeather(info){
             icon: weather[weather.length-1].weather.icon,
             description: weather[weather.length-1].weather.description
         };
-        console.log(apiResponse)
+        postData('http://localhost:8081/add', apiResponse);
         return apiResponse;
     }
     catch(error){
         console.log(error);
     }
 }
+
+/* Function to POST data */
+const postData = async(url, data)=>{
+    //console.log(data);
+    console.log(JSON.stringify(data));
+    const res = await fetch(url, {
+    method: 'POST',
+    credentials: 'same-origin',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+    });
+    try{
+        const newData = await res.json();
+        console.log(newData)
+        return newData
+    } catch(error){
+        console.log(error);
+    }
+}
+
 
 export { getWeather }

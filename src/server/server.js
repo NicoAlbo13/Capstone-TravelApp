@@ -2,9 +2,8 @@ var path = require('path')
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-const dotenv = require('dotenv')
-dotenv.config()
 
+//start app
 const app = express()
 
 app.use(express.static('dist'))
@@ -18,24 +17,17 @@ app.listen(port, ()=>{
     console.log(`Server running on localhost: ${port}`)
 })
 
-const apiKey = {
-    key: `${process.env.API_KEY}`
-}
-
 projectData = {};
-
-app.get('/key', function (req, res){
-    res.send(apiKey)
-})
 
 app.post('/add', message)
 
 function message(req, res){
     postData = {
-        agreement: req.body.agreement,
-        irony: req.body.irony,
-        subjectivity: req.body.subjectivity,
-        confidence: req.body.confidence
+        temp: req.body.temp,
+        minTemp: req.body.minTemp,
+        maxTemp: req.body.maxTemp,
+        icon: req.body.icon,
+        description: req.body.description
     }
     Object.assign(projectData, postData);
     console.log(projectData)
