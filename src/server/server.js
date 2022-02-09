@@ -35,8 +35,25 @@ function message(req, res){
     res.send(projectData);
 }
 
+const ImageData = {};
+
+app.post('/img', image)
+
+function image(req, res){
+    postData = {
+        img: req.body.img
+    }
+    Object.assign(ImageData, postData);
+    console.log(ImageData)
+    res.send(ImageData);
+}
+
+const allData = [];
+
 app.get('/all', sendData);
 
 function sendData(req, res){
-    res.send(projectData);
+    allData.push(projectData, ImageData);
+    console.log(allData)
+    res.send(allData);
 }

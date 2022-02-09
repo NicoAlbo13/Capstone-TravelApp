@@ -7,6 +7,7 @@ async function handleSubmit(e){
     let date = document.getElementById('departDate').value;
     let geoInfo = await Client.getGeo(place, date);
     let weather = await Client.getWeather(geoInfo);
+    let image = await Client.getImage(geoInfo);
 }
 
 export { handleSubmit }
