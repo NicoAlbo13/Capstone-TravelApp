@@ -22,8 +22,19 @@ async function getImage(info){
                     img: dataCountry.hits[0].largeImageURL
                 };
                 console.log(apiCountry)
-                postData('http://localhost:8081/img', apiCountry)
-                return apiCountry
+                if (apiCountry === 'undifined'){
+                    const resPlane = await fetch(`${api}plane${apiSecond}`);
+                    try{
+                        const dataPlane = await resPlane.json();
+                        postData('http://localhost:8081/img', {img: dataPlane.hits[0].largeImageURL})
+                    }
+                    catch(error){
+                        console.log(error)
+                    }
+                }else{
+                    postData('http://localhost:8081/img', apiCountry)
+                    return apiCountry
+                }
             }
             catch(error){
                 console.log(error);
