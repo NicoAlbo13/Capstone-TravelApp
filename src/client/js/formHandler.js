@@ -8,6 +8,7 @@ async function handleSubmit(e){
     let geoInfo = await Client.getGeo(place, date);
     let weather = await Client.getWeather(geoInfo);
     let image = await Client.getImage(geoInfo);
+    let general = await Client.getGeneral(geoInfo);
 }
 
 export { handleSubmit }

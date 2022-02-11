@@ -35,6 +35,22 @@ function message(req, res){
     res.send(projectData);
 }
 
+const GeneralData = {};
+
+app.post('/data', general)
+
+function general(req, res){
+    postData = {
+        lan: req.body.lan,
+        capital: req.body.capital,
+        money: req.body.money,
+        region: req.body.region
+    }
+    Object.assign(GeneralData, postData);
+    console.log(GeneralData)
+    res.send(GeneralData);
+}
+
 const ImageData = {};
 
 app.post('/img', image)
@@ -53,7 +69,7 @@ const allData = [];
 app.get('/all', sendData);
 
 function sendData(req, res){
-    allData.push(projectData, ImageData);
+    allData.push(projectData, GeneralData, ImageData);
     console.log(allData)
     res.send(allData);
 }
