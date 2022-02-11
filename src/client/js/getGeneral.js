@@ -12,7 +12,8 @@ async function getGeneral(info){
             capital: data[dataL].capital,
             money: data[dataL].currencies[0].name,
             region: data[dataL].subregion,
-            population: data[dataL].population
+            population: data[dataL].population,
+            name: data[dataL].altSpellings[1]
         };
         //console.log(apiResponse)
         postData('http://localhost:8081/data', apiResponse)
