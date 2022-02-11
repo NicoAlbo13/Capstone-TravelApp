@@ -44,7 +44,8 @@ function general(req, res){
         lan: req.body.lan,
         capital: req.body.capital,
         money: req.body.money,
-        region: req.body.region
+        region: req.body.region,
+        population: req.body.population
     }
     Object.assign(GeneralData, postData);
     console.log(GeneralData)
