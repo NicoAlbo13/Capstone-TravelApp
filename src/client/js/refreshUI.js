@@ -3,10 +3,12 @@ const refreshUI = async (city) => {
     const request = await fetch('http://localhost:8081/all');
     try{
         const allData = await request.json();
+        const iconUrl = `https://www.weatherbit.io/static/img/icons/${allData[0].icon}.png`;
         document.getElementById('img').setAttribute("src", allData[2].img);
         document.getElementById('temp').innerHTML = `Temperature: ${allData[0].temp}`;
         document.getElementById('min').innerHTML = `Lowest: ${allData[0].minTemp}`;
         document.getElementById('max').innerHTML = `Maximun: ${allData[0].maxTemp}`;
+        document.getElementById('iconImg').setAttribute("src", iconUrl);
         document.getElementById('description').innerHTML = `${allData[0].description}`;
         document.getElementById('days-away').innerHTML = `You are ${allData[0].days} days away from your trip.`;
         document.getElementById('general').innerHTML = `The city of ${Ccity} you are visiting is located in ${allData[1].region}.
