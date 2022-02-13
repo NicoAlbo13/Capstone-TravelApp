@@ -7,38 +7,54 @@
     <title>Travel App</title>
   </head>
   <body>
-    <div class="form-container">
-      <form class="form">
-        <h2 class="title">Travel App</h2>
-        <div class="destination">
-          <label for="city">Where are you going?</label>
-          <input type="text" id="destination" placeholder="Enter a city name" />
-        </div>
-        <div class="date">
-          <label class="date">When are you leaving?</label>
-          <input type="date" id="departDate" placeholder="October 29, 2022"></input>
-        </div>
-        <button id="submit">Submit</button>
-      </form>
-    </div>
-    <div id="results">
-      <div id="error"></div>
-      <div class="image hide">
-        <img src="" id="img">
+    <div class="app">
+      <header class="navbar">
+        <div class="logo">TRAVEL  APP</div>
+      </header>
+      <div class="form-container" id="main">
+        <form id="form">
+          <h2 class="title">Plan your Trip</h2>
+          <div class="destination">
+            <label for="city">Where are you going?</label>
+            <input type="text" id="destination" class="text" placeholder="Enter a city name" />
+          </div>
+          <div class="date">
+            <label class="date">When are you leaving?</label>
+            <input type="text" id="departDate" class="text" onfocus="(this.type='date')" placeholder="DD/MM/YYYY"></input>
+          </div>
+          <button id="submit" class="button">Plan!</button>
+        </form>
       </div>
-      <div class="weather">
-        <div id="temp"></div>
-        <div id="min"></div>
-        <div id="max"></div>
-        <div id="icon">
-          <img src="" id="iconImg">
+      <div id="error" class="hide"></div>
+      <div id="result-container" class="hide">
+        <div id="results">
+          <div class="image">
+            <img src="" id="img">
+          </div>
+          <div id="all">
+            <h1 id="Trip" class="trip-name"></h1>
+            <div id="days-away"></div>
+            <h2 class="head">Weather Details</h2>
+            <div class="weather">
+              <div id="icon" class="">
+                <img src="" id="iconImg">
+                <div id="description"></div>
+              </div>
+              <div class="temp">
+                <div id="temp"></div>
+                <div id="range"></div>
+              </div>
+            </div>
+            <div id="travel-data">
+              <h2 class="head">Relevant Info.</h2>
+              <div id="general"></div>
+            </div>
+          </div>
         </div>
-        <div id="description"></div>
       </div>
-      <div id="travel-data">
-        <div id="days-away"></div>
-        <div id="general"></div>
-      </div>
+      <footer id="footer">
+        Travel app by &copyAlbo
+      </footer>
     </div>
   </body>
 </html>
