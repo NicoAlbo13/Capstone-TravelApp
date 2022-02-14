@@ -1,7 +1,9 @@
 import "babel-polyfill"
 import { refreshUI } from "./refreshUI";
 
-document.getElementById('submit').addEventListener('click', handleSubmit);
+if(document.getElementById('submit')){
+    document.getElementById('submit').addEventListener('click', handleSubmit);
+}
 
 async function handleSubmit(e){
     e.preventDefault();
