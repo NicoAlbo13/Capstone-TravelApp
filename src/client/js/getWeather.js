@@ -1,3 +1,5 @@
+import "babel-polyfill"
+
 async function getWeather(info){
     /* API data*/
     const api = 'https://api.weatherbit.io/v2.0/forecast/daily';

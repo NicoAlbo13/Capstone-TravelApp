@@ -1,3 +1,5 @@
+import "babel-polyfill"
+
 async function getGeo(place, date){
     /*Find the days for the travel*/
     const travelDate = new Date(date);

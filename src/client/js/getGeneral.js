@@ -1,3 +1,5 @@
+import "babel-polyfill"
+
 async function getGeneral(info){
     /* API data*/
     const api = 'https://restcountries.com/v2/name/';

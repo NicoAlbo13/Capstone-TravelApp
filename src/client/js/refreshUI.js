@@ -1,3 +1,5 @@
+import "babel-polyfill"
+
 const refreshUI = async (city) => {
     const Ccity =  city.charAt(0).toUpperCase() + city.slice(1);
     const request = await fetch('http://localhost:8081/all');

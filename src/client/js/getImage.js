@@ -1,3 +1,5 @@
+import "babel-polyfill"
+
 async function getImage(info){
     /* API data*/
     const api = 'https://pixabay.com/api/?key=20611047-ab56df5f8433f58072c7b321e&q=';
